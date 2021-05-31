@@ -1,0 +1,27 @@
+{
+  "name": "stfuk",
+  "version": "1.0.0",
+  "description": "shut the fuck up kint",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "anti-catboy",
+    "kintwinn",
+    "stfu",
+    "shut",
+    "the",
+    "fuck",
+    "up",
+    "kint"
+  ],
+  "author": "GreenBeandon",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
