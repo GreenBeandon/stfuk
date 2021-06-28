@@ -72,12 +72,8 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
 
 client.on("message", async  msg => {
 
-  if(msg.author.id === process.env.BEAN){
-    MockKint()
-  }
-
-
   if(msg.author.id === process.env.KINT){
+    MockKint()
     var rand = Math.floor(Math.random() * 1000);
     if(rand === 999){
       msg.reply("shut the fuck up");
@@ -103,6 +99,7 @@ client.on("message", async  msg => {
 async function MockKint(){
   var date = (new Date());//.addDays(6);
   var dateString = date.toDateString();
+  console.log(dateString);
   if(today !== dateString){
     today = dateString;
     sentToday = false;
