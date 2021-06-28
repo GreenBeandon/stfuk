@@ -98,6 +98,7 @@ client.on("message", async  msg => {
 
 async function MockKint(){
   var date = (new Date());//.addDays(6);
+  date.setHours(date.getHours() - 6);
   var dateString = date.toDateString();
   console.log(dateString);
   if(today !== dateString){
@@ -117,7 +118,7 @@ async function MockKint(){
       case "mon":
         dev.log("Today is Mon");
         channel.send("<@" + process.env.KINT + ">", {
-          files: ["./images/misatomonday.png"]
+          files: ["./images/misatomonday.jpg"]
         });
         break;
       case "tue":
