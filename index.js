@@ -75,9 +75,25 @@ client.on("message", async  msg => {
   if(msg.author.id === process.env.NICK){
     MockNICK()
     var rand = Math.floor(Math.random() * 1000);
-    if(rand === 999){
-      msg.reply("shut the fuck up");
+    console.log(rand);
+    switch(rand){
+      case 999:
+        msg.reply("shut the fuck up");
+        break;
+      case 555:
+        msg.reply("there could be 100 people in a room and 99 dont believe in you, but i had this 1 incredible talent... with me. ");
+        break;
+      case 111:
+        msg.reply("", {files: ["./images/thereisnosuchthing1.png"]});
+        break;
+      case 222:
+        msg.reply("", {files: ["./images/thereisnosuchthing2.jpg"]});
+        break;
+      case 333:
+        msg.reply("", {files: ["./images/thereisnosuchthing3.jpg"]});
+        break;
     }
+
 
   }
 
