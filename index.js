@@ -28,7 +28,7 @@ client.on("ready", () => {
     client.user.setPresence({
           status: "dnd",  //You can show online, idle....
           activity: {
-              name: "Kintwinn 24/7",  //The message shown
+              name: "Nick 24/7",  //The message shown
               type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
           }
       });
@@ -38,7 +38,7 @@ client.on("ready", () => {
 client.on('guildMemberSpeaking', async (member, speaking) => {
 
   if(member.user !== undefined){
-    if(member.user.id === process.env.KINT){
+    if(member.user.id === process.env.NICK){
       if(speaking){
         var rand = Math.floor(Math.random() * 10000);
         dev.log(rand);
@@ -55,10 +55,10 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
     // check for bot
     if (oldState.member.user.bot) return;
 
-    if(newState.member.user.id === process.env.KINT){
+    if(newState.member.user.id === process.env.NICK){
       if(newState.channelID !== null){
         connection = await newState.member.voice.channel.join();
-        var u = client.users.cache.find(i => i.id === process.env.KINT);
+        var u = client.users.cache.find(i => i.id === process.env.NICK);
         await UpdateXPFP(u);
       }
       else{
@@ -72,8 +72,8 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
 
 client.on("message", async  msg => {
 
-  if(msg.author.id === process.env.KINT){
-    MockKint()
+  if(msg.author.id === process.env.NICK){
+    MockNICK()
     var rand = Math.floor(Math.random() * 1000);
     if(rand === 999){
       msg.reply("shut the fuck up");
@@ -96,7 +96,7 @@ client.on("message", async  msg => {
 
 });
 
-async function MockKint(){
+async function MockNICK(){
   var date = (new Date());//.addDays(6);
   date.setHours(date.getHours() - 6);
   var dateString = date.toDateString();
@@ -111,43 +111,43 @@ async function MockKint(){
     switch(day.toLowerCase()){
       case "sun":
         dev.log("Today is Sunday");
-        channel.send("<@" + process.env.KINT + "> its lazy Rei Sunday!", {
+        channel.send("<@" + process.env.NICK + "> its lazy Rei Sunday!", {
           files: ["./images/lazyreisunday.png"]
         });
         break;
       case "mon":
         dev.log("Today is Mon");
-        channel.send("<@" + process.env.KINT + ">", {
+        channel.send("<@" + process.env.NICK + ">", {
           files: ["./images/misatomonday.jpg"]
         });
         break;
       case "tue":
         dev.log("Today is Tuesday");
-        channel.send("<@" + process.env.KINT + ">", {
+        channel.send("<@" + process.env.NICK + ">", {
           files: ["./images/reituesday.jpg"]
         });
         break;
       case "wed":
         dev.log("Today is Wednesday");
-        channel.send("<@" + process.env.KINT + ">", {
+        channel.send("<@" + process.env.NICK + ">", {
           files: ["./images/wedthurs.png"]
         });
         break;
       case "thu":
         dev.log("Today is Thursday");
-        channel.send("<@" + process.env.KINT + ">", {
+        channel.send("<@" + process.env.NICK + ">", {
           files: ["./images/asukathursday.gif"]
         });
         break;
       case "fri":
         dev.log("Today is Friday");
-        channel.send("<@" + process.env.KINT + ">", {
+        channel.send("<@" + process.env.NICK + ">", {
           files: ["./images/aloneonafridaynight.png"]
         });
         break;
       case "sat":
         dev.log("Today is Saturday");
-        channel.send("<@" + process.env.KINT + ">", {
+        channel.send("<@" + process.env.NICK + ">", {
           files: ["./images/aloneonasaturdaynight.png"]
         });
         break;
